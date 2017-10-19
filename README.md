@@ -7,7 +7,7 @@ A mixin to implement a custom input or form validator
 
 ## Doc & demo
 
-[https://lostinbrittany.github.io/granite-c3](https://lostinbrittany.github.io/granite-validator-mixin)
+[https://lostinbrittany.github.io/granite-validator-mixin](https://lostinbrittany.github.io/granite-validator-mixin)
 
 
 ## GraniteElements.ValidatorMixin

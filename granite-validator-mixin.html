@@ -13,38 +13,38 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <link rel="import" href="../iron-meta/iron-meta.html">
 
 <script>
-   /*
-    * `granite-validator`
-    * A mixin to implement a custom input or form validator.
-    *
-    * Use GraniteElements.ValidatorMixin to implement a custom input/form validator. Element
-    * instances implementing this behavior will be registered for use in elements that implement
-    * `Polymer.IronValidatableBehavior`.
-    *
-    * @mixinFunction
-    * @polymer
-    * @demo demo/index.html
-    */
+  /* globals GraniteElements */
 
   // Create my namespace, if it doesn't exist
   if (!window.GraniteElements) {
     window.GraniteElements = {};
   }
-  /* globals GraniteElements */
-  GraniteElements.ValidatorMixin =
-      Polymer.dedupingMixin((superClass) => class extends superClass {
-      ready() {
-        super.ready();
-        new Polymer.IronMeta({type: 'validator', key: this.is || this.constructor.is, value: this});
-      }
-      /**
-        * Implement custom validation logic in this function.
-        * @param {Object} values The value to validate. May be any type depending on the validation logic.
-        * @return {Boolean} true if `values` is valid.
-        */
-      validate(values) {
-        return true;
-      }
+
+  /**
+   * `granite-validator`
+   * A mixin to implement a custom input or form validator.
+   *
+   * Use GraniteElements.ValidatorMixin to implement a custom input/form validator. Element
+   * instances implementing this behavior will be registered for use in elements that implement
+   * `Polymer.IronValidatableBehavior`.
+   *
+   * @mixinFunction
+   * @polymer
+   * @demo demo/index.html
+   */
+  GraniteElements.ValidatorMixin = Polymer.dedupingMixin((superClass) => class extends superClass {
+    ready() {
+      super.ready();
+      new Polymer.IronMeta({type: 'validator', key: this.is || this.constructor.is, value: this});
+    }
+    /**
+      * Implement custom validation logic in this function.
+      * @param {Object} values The value to validate. May be any type depending on the validation logic.
+      * @return {Boolean} true if `values` is valid.
+      */
+    validate(values) {
+      return true;
+    }
   });
 
 </script>
